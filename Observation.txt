@@ -1,0 +1,34 @@
+1st model:
+Convolution layer 1: In-Channel=1 , Out-Channel=6 , kernel-Size=5 , padding = 0
+Convolution layer 2: In-Channel=6 , Out-Channel=16 , kernel-Size=5 , padding = 0
+Maxpooling dimension:2x2
+Fixed Convolution layer 1:In-feature=256 , Out-feature=4
+Fixed Convolution layer 2:In-feature=4 , Out-feature=30*84
+Fixed Convolution layer 3:In-feature=30*84 , Out-feature=10
+
+Observation:
+Usage of different optimizer gives different level of accuracy and different loses
+When Adam optimizer is used ,it gives accuracy of :82.37%
+When SGD optimizer is used , it gives accuracy of :84.82%
+But there is no big differnce in changing the loss function.
+
+2nd model:
+Convolution layer 1: In-Channel=1 , Out-Channel=32 , kernel-Size=3 , padding = 1
+Convolution layer 2: In-Channel=32 , Out-Channel=64 , kernel-Size=3 , padding = 0
+Maxpooling dimension:2x2
+Fixed Convolution layer 1:In-feature=64*6*6 , Out-feature=600
+Fixed Convolution layer 2:In-feature=600 , Out-feature=120
+Fixed Convolution layer 3:In-feature=120 , Out-feature=10
+
+Observation:
+By changing the model , it effect the accuracy score.If the model is not selected
+perfectly then accuracy can be decreased.
+So , with this model ,accuracy with Adam optimizer is:89.51%
+and with SGD accuracy is:88.57%
+Changing model also effect the training time ;
+In this model , training time is really large as compared to previous model,
+though the accuracy is increased.
+
+In both the model,with increase in epoch value ,loss is decreased and the accuracy is 
+increased.
+After increasing epoch value to 4 ,accuracy with Adam optimizer is:89.92%
